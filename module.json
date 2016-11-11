@@ -1,0 +1,20 @@
+{
+  "name": "codal-lpc1768",
+  "version": "0.0.2",
+  "description": "Simple NXP LPC1768 model based on the codal core",
+  "keywords": [],
+  "author": "joe@comp.lancs.ac.uk",
+  "repository": {
+    "url": "ssh://git@github.com/RidaJichi/codal-lpc1768",
+    "type": "git"
+  },
+  "homepage": "https://github.com/RidaJichi/lpc1768",
+  "license": "MIT",
+  "dependencies": {
+    "codal": "finneyj/codal#refactor"
+  },
+  "extraIncludes": [
+    "inc"
+  ],
+  "targetDependencies": {}
+}
