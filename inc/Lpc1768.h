@@ -61,7 +61,7 @@ DEALINGS IN THE SOFTWARE.
 //#include "DeviceDisplay.h"
 
 #include "DeviceFiber.h"
-//#include "DeviceMessageBus.h"
+#include "DeviceMessageBus.h"
 
 //#include "DeviceBLEManager.h"
 //#include "DeviceRadio.h"
@@ -106,7 +106,7 @@ class Lpc1768
     //MicroBitI2C                 i2c;
 
     // Device level Message Bus abstraction
-    //MicroBitMessageBus          messageBus;
+    DeviceMessageBus             messageBus;
 
     // Member variables to represent each of the core components on the device.
     //MicroBitDisplay             display;

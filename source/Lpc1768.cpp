@@ -45,7 +45,8 @@ CodalDevice device;
     //ble(NULL)
 
 Lpc1768::Lpc1768() :
-    io()
+    io(),
+    messageBus(),
 //    buttonA(DEVICE_PIN_BUTTON_A, DEVICE_ID_BUTTON_A, DEVICE_BUTTON_ALL_EVENTS, PullUp),
 //    buttonB(DEVICE_PIN_BUTTON_B, DEVICE_ID_BUTTON_B, DEVICE_BUTTON_ALL_EVENTS, PullUp)
 {
@@ -79,7 +80,7 @@ void Lpc1768::init()
 #endif
 
     // Bring up fiber scheduler.
-    //scheduler_init(messageBus);
+    scheduler_init(messageBus);
 
     // Seed our random number generator
     //seedRandom();
@@ -87,7 +88,7 @@ void Lpc1768::init()
     // Create an event handler to trap any handlers being created for I2C services.
     // We do this to enable initialisation of those services only when they're used,
     // which saves processor time, memeory and battery life.
-    //messageBus.listen(DEVICE_ID_MESSAGE_BUS_LISTENER, DEVICE_EVT_ANY, this, &Lpc1768::onListenerRegisteredEvent);
+    messageBus.listen(DEVICE_ID_MESSAGE_BUS_LISTENER, DEVICE_EVT_ANY, this, &Lpc1768::onListenerRegisteredEvent);
 
     status |= LPC1768_INITIALIZED;
 
